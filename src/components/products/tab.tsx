@@ -14,9 +14,15 @@ export const ProductsTab = () => {
           Rolls
         </TabsTrigger>
       </TabsList>
-      <TabsContent value='sushi'>Conteúdo Sushi</TabsContent>
-      <TabsContent value='temaki'>Conteúdo Temaki</TabsContent>
-      <TabsContent value='rolls'>Conteúdo Rolls</TabsContent>
+      <TabsContent value='sushi' className='mt-6'>
+        Conteúdo Sushi
+      </TabsContent>
+      <TabsContent value='temaki' className='mt-6'>
+        Conteúdo Temaki
+      </TabsContent>
+      <TabsContent value='rolls' className='mt-6'>
+        Conteúdo Rolls
+      </TabsContent>
     </Tabs>
   )
 }
