@@ -1,28 +1,62 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { getAllProduct } from '@/services/product'
+import { Product } from '@/types/product'
+import { ProductEmpty } from './empty'
+import { ProductItem } from './item'
 
-export const ProductsTab = () => {
+type Tab = {
+  title: string
+  value: string
+  products: Product[]
+}
+
+export const ProductsTab = async () => {
+  const products = await getAllProduct()
+
+  const tabs: Tab[] = [
+    {
+      title: 'Sushi',
+      value: 'sushi',
+      products: products.filter((item) => item.category === 'sushi'),
+    },
+    {
+      title: 'Temaki',
+      value: 'temaki',
+      products: products.filter((item) => item.category === 'temaki'),
+    },
+    {
+      title: 'Combos',
+      value: 'pack',
+      products: products.filter((item) => item.category === 'pack'),
+    },
+    {
+      title: 'Bebidas',
+      value: 'beverage',
+      products: products.filter((item) => item.category === 'beberage'),
+    },
+  ]
+
   return (
     <Tabs defaultValue='sushi'>
       <TabsList className='flex'>
-        <TabsTrigger value='sushi' className='flex-1'>
-          Sushi
-        </TabsTrigger>
-        <TabsTrigger value='temaki' className='flex-1'>
-          Temaki
-        </TabsTrigger>
-        <TabsTrigger value='rolls' className='flex-1'>
-          Rolls
-        </TabsTrigger>
+        {tabs.map((item) => (
+          <TabsTrigger key={item.value} value={item.value} className='flex-1'>
+            {item.title}
+          </TabsTrigger>
+        ))}
       </TabsList>
-      <TabsContent value='sushi' className='mt-6'>
-        Conteúdo Sushi
-      </TabsContent>
-      <TabsContent value='temaki' className='mt-6'>
-        Conteúdo Temaki
-      </TabsContent>
-      <TabsContent value='rolls' className='mt-6'>
-        Conteúdo Rolls
-      </TabsContent>
+      {tabs.map((item) => (
+        <TabsContent key={item.value} value={item.value} className='mt-6'>
+          {item.products.length > 0 && (
+            <div className='grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4'>
+              {item.products.map((product) => (
+                <ProductItem key={product.id} item={product} />
+              ))}
+            </div>
+          )}
+          {item.products.length === 0 && <ProductEmpty />}
+        </TabsContent>
+      ))}
     </Tabs>
   )
 }
