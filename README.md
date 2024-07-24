@@ -1,8 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Delivery Sushi
 
-## Getting Started
+## Descrição
 
-First, run the development server:
+O Delivery Sushi é um projeto desenvolvido em conjunto com o curso B7 Web ([b7web.com.br](https://b7web.com.br)). Este cardápio online para restaurantes foi criado para facilitar a escolha e o envio de pedidos. Com ele, os clientes podem selecionar os itens desejados, calcular o valor total, fornecer suas informações pessoais, endereço e forma de pagamento. Após isso, o pedido pode ser enviado diretamente para o restaurante via WhatsApp, que dará seguimento ao atendimento e status do pedido também pelo WhatsApp. O projeto conta ainda com suporte para temas claro e escuro.
+
+## Funcionalidade Principal
+
+Facilitar a escolha do pedido e enviá-lo ao restaurante.
+
+## Tecnologias Utilizadas
+
+- Next.js
+- React
+
+## Bibliotecas Utilizadas
+
+- Shadcn-ui
+- Tailwind
+- Lucide-React
+- Zustand
+
+## Utilização do Projeto
+
+Para utilizar este projeto, faça o deploy em um servidor que suporte Node.js.
+
+## Contribuição
+
+Bonieky Lacerda - B7Web
+
+## Autor
+
+Bonieky Lacerda - Thomas Roodson
+
+## Imagens do Projeto
+
+![Screenshot 1](https://i.ibb.co/9WdY0Lt/Screenshot-1.png)
+![Screenshot 2](https://i.ibb.co/4ZRtmbr/Screenshot-2.png)
+![Screenshot 3](https://i.ibb.co/4f33cgp/Screenshot-3.png)
+![Screenshot 4](https://i.ibb.co/9nC4DzH/Screenshot-4.png)
+
+## Instalação local
+
+Execute o servidor de desenvolvimento:
 
 ```bash
 npm run dev
@@ -13,24 +52,3 @@ pnpm dev
 # or
 bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
